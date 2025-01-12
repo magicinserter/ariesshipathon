@@ -4,10 +4,10 @@ import streamlit as st
 from qdrant_client import models, QdrantClient
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
-genai.configure(api_key="AIzaSyDg507o-EmMj0D0A6weeV2VIl5BpKBYcd0")
+genai.configure(api_key=st.secrets["googleapi"])
 qclient = QdrantClient(
     url="https://161a3fdc-cd95-4bca-ba74-f831daa45699.eu-west-1-0.aws.cloud.qdrant.io:6333",
-    api_key= "6n6IfBtsHusmZIiHWvz5lZa0rW5SNa8DuZHY4B97KVcYO6yOddCPYg",
+    api_key= st.secrets["qdrantapi"],
 )
 encoder = SentenceTransformer('all-MiniLM-L6-v2')
 # Create the model
