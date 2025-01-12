@@ -52,7 +52,7 @@ if "interests" not in st.session_state:
     st.session_state.interests = []
 
 rows = [events[i:i + slots_per_row_interest] for i in range(0, len(events), slots_per_row_interest)]
-
+st.session_state.interests = []
 # Create toggle buttons (checkboxes) for interests
 for row in rows:
     cols = st.columns(len(row))  # Create a column for each slot in the row
