@@ -30,7 +30,11 @@ model = genai.GenerativeModel(
   model_name="gemini-2.0-flash-exp",
   generation_config=generation_config,
 )
-
+# import PIL.Image
+# img = PIL.Image.open('/content/Screenshot 2025-01-12 at 12.41.16 PM.png')
+# response = model.generate_content(["Tell me the event name, date, time and contact info from the image and show it", img], stream=True)
+# response.resolve()
+# print(response.text)
 # Set the page configuration
 st.set_page_config(
     page_title="Event Manager",
