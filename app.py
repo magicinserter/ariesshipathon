@@ -52,7 +52,6 @@ if "interests" not in st.session_state:
     st.session_state.interests = []
 
 rows = [events[i:i + slots_per_row_interest] for i in range(0, len(events), slots_per_row_interest)]
-st.session_state.interests = []
 # Create toggle buttons (checkboxes) for interests
 for row in rows:
     cols = st.columns(len(row))  # Create a column for each slot in the row
@@ -70,7 +69,7 @@ for row in rows:
 
 # Initialize session state for storing free time selections
 if "free_time" not in st.session_state:
-    st.session_state.free_time = {}
+    st.session_state.free_time = []
 
 # Hour-wise slots from 9:00 to 22:00
 time_slots = [f"{hour}:00 - {hour+1}:00" for hour in range(9, 22)]
